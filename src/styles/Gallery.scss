@@ -1,0 +1,30 @@
+@import './Settings.scss';
+
+
+.kasa-gallery{
+   
+
+    &-container{
+        @include container;
+        background-color: #F7F7F7;
+        border-radius: 25px;
+    }
+
+    &-cards{
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+
+    &-card{
+        width: 30%;
+        min-height: 255px;
+        background: linear-gradient(180deg, rgba(255, 97, 99) 0%, rgba(128, 49, 49) 100%);
+        border-radius: 10px;
+        margin: 15px;
+        color: white;
+    }
+}

@@ -1,0 +1,14 @@
+@import './Settings.scss';
+body {
+  margin: 0;
+  @include primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  
+}
+
+
+#root{
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+@import './Settings.scss';
+
+.kasa-header{
+  padding: 20px 0;
+  &-container{
+    @include container;
+    position: relative;
+    width: 100%;
+
+   
+    
+  }
+  &-info{
+    
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+
+    p{
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 142.6%;
+      color: white;
+      margin: auto;
+    }
+  }
+
+  &-highlight {
+    img{
+      max-height: 223px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+    &-dark{
+      top: 0;
+      position: absolute;
+      border-radius: 25px;
+      width: 100%;
+      height: 99%;
+      background: #000000;
+      mix-blend-mode: darken;
+      opacity: 0.3;
+    }
+  }
+  
+
+  
+
+}

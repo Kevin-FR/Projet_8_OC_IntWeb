@@ -1,0 +1,42 @@
+@import './Settings.scss';
+.kasa-banner{
+    
+    &-container{
+        @include container;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    &-logo img{
+        max-height: 54px;
+    }
+
+
+    &-btn {
+        align-self: center;
+        button{
+        color: $btn_header;
+        text-decoration: none;
+        border: none;
+        background-color: transparent;
+        @include primary-font;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 142.6%;
+        cursor: pointer;
+        padding-left: 57px;
+        }
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .kasa-banner{
+       
+        &-btn button{
+            font-size: 24px;
+        }
+    }
+
+
+}
