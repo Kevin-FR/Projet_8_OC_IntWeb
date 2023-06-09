@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.scss';
 import Header from './components/Header';
-import Gallery from './components/Gallery';
+import Gallery from './components/pages/Gallery';
+import Error404 from './components/pages/Error404';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
 
@@ -11,11 +13,17 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Banner />
-    <Header />
-    <Gallery />
-
-    <Footer />
+    
+    <Router>
+      <Banner />
+      <Header />
+        <Routes>
+          <Route path="/" element={<Gallery />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      <Footer />
+    </Router>
+    
   </React.StrictMode>
 );
 

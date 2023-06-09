@@ -13,19 +13,17 @@
     }
 
 
-    &-btn {
+    &-nav{
         align-self: center;
-        button{
-        color: $btn_header;
-        text-decoration: none;
-        border: none;
-        background-color: transparent;
-        @include primary-font;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 142.6%;
-        cursor: pointer;
-        padding-left: 57px;
+        a{
+            color: $nav_header;
+            text-decoration: none;
+            @include primary-font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 142.6%;
+            cursor: pointer;
+            padding-left: 57px;
         }
     }
 }
@@ -33,7 +31,7 @@
 @media screen and (min-width: 375px) {
     .kasa-banner{
        
-        &-btn button{
+        &-nav a{
             font-size: 24px;
         }
     }

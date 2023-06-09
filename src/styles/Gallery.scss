@@ -22,9 +22,28 @@
     &-card{
         width: 30%;
         min-height: 255px;
-        background: linear-gradient(180deg, rgba(255, 97, 99) 0%, rgba(128, 49, 49) 100%);
-        border-radius: 10px;
+        //background: linear-gradient(180deg, rgba(255, 97, 99) 0%, rgba(128, 49, 49) 100%);
+        //border-radius: 10px;
         margin: 15px;
         color: white;
+        position: relative;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            
+            //mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
+            //-webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.5)));
+            //mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+        }
+        p{
+            position: absolute;
+            bottom: 0;
+            margin-left: 20px;
+        }
     }
+
+
 }

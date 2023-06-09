@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import background from '../assets/images/bg-ocean.png';
 import '../styles/Header.scss';
 
