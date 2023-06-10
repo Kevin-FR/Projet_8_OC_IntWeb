@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.scss';
-import Header from './components/Header';
 import Gallery from './components/pages/Gallery';
+import ShowItem from './components/pages/ShowItem';
 import Error404 from './components/pages/Error404';
 import Footer from './components/Footer';
 import Banner from './components/Banner';
+import Header from './components/Header';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,10 +17,9 @@ root.render(
     
     <Router>
       <Banner />
-      <Header />
         <Routes>
           <Route path="/" element={<Gallery />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="/show/:id" element={<ShowItem />} />
         </Routes>
       <Footer />
     </Router>
