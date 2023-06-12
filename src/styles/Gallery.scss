@@ -3,13 +3,9 @@
 
 .kasa-gallery{
    
-
-    &-container{
-        @include container;
-        background-color: #F7F7F7;
-        border-radius: 25px;
-    }
-
+    @include container;
+    background-color: #F7F7F7;
+    border-radius: 25px;
     &-cards{
         padding: 10px;
         display: flex;
@@ -61,5 +57,19 @@
         }
     }
 
-
+    @media (max-width: 400px) {
+        &-cards{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+    
+        }
+        &-card{
+            width: 100%;
+        }
+    }
 }
+
+

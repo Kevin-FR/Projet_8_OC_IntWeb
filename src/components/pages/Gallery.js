@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Gallery() {
     return (
-        <div className='kasa-gallery-container'>
+        <div className='kasa-gallery'>
             <div className='kasa-gallery-cards'>
                 {logements.map(({id, title, cover}) =>(
                     

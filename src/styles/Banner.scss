@@ -10,6 +10,9 @@
     }
     &-logo img{
         max-height: 54px;
+        @media (max-width: 400px) {
+            max-height: 37px;
+        }
     }
 
 
@@ -20,21 +23,14 @@
             text-decoration: none;
             @include primary-font;
             font-weight: 500;
-            font-size: 12px;
-            line-height: 142.6%;
+            font-size: 24px;
             cursor: pointer;
             padding-left: 57px;
+            @media (max-width: 400px) {
+                font-size: 12px;
+                padding-left: 26px;
+            }
         }
+        
     }
-}
-
-@media screen and (min-width: 375px) {
-    .kasa-banner{
-       
-        &-nav a{
-            font-size: 24px;
-        }
-    }
-
-
 }

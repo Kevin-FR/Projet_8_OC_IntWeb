@@ -7,7 +7,7 @@ function Banner() {
 	return (
 		<header className='kasa-banner'>
             <div className='kasa-banner-container'>
-                <div className='kasa-banner-logo'><img src={logo} alt="logo" /></div>
+                <div className='kasa-banner-logo'><Link to="/"><img src={logo} alt="logo" /></Link></div>
                 <div className='kasa-banner-nav'>
                     <nav>
                         <Link to="/">Accueil</Link>

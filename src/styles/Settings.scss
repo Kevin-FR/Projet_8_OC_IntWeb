@@ -12,4 +12,8 @@ $footer_bg_color : #000000;
 @mixin container{
     max-width: 1240px;
     margin: auto;
+
+    @media (max-width: 400px) {
+        padding: 10px;
+    }
 }
