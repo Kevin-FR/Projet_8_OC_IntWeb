@@ -1,8 +1,8 @@
 @import './Settings.scss';
 .kasa-banner{
+    @include container;
     
     &-container{
-        @include container;
         display: flex;
         flex-direction: row;
         justify-content: space-between;

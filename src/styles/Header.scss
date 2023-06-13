@@ -3,7 +3,7 @@
 .kasa-header{
   padding: 20px 0;
   &-container{
-    @include container;
+    //@include container;
     position: relative;
     width: 100%;
 
@@ -23,9 +23,11 @@
     p{
       font-weight: 500;
       font-size: 48px;
-      line-height: 142.6%;
       color: white;
       margin: auto;
+      @media (max-width:400px) {
+        font-size: 24px;
+      }
     }
   }
 
