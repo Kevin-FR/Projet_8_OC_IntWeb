@@ -21,8 +21,7 @@ const ToggleButtonWrapper = styled.div`
 
 const PanelContent = styled.div`
   overflow: hidden;
-  transition: height 500ms;
-  height: ${(props) => (props.collapsed ? 0 : "100%")};
+  max-height: ${(props) => (props.collapsed ? 0 : "400px")};
 `;
 
 const PanelContentInner = styled.div`
