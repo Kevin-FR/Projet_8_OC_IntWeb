@@ -3,6 +3,7 @@
 $primary_color: #FF6060;
 $nav_header: $primary_color;
 $footer_bg_color : #000000;
+$screen_mobile : 450px;
 
 @mixin primary-font{
 	font-family: 'Montserrat';
@@ -13,7 +14,7 @@ $footer_bg_color : #000000;
     max-width: 1240px;
     margin: auto;
     padding: 15px;
-    @media (max-width: 400px) {
+    @media (max-width: $screen_mobile) {
     padding: 10px;
     }
 }

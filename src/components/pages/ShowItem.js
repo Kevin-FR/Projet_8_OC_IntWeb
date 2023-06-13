@@ -53,7 +53,7 @@ function StarsRating(rating, logement) {
     } else {
       stars.push(
         <FontAwesomeIcon
-        key={`${logement}-star-${rating}`}
+          key={`${logement}-star-${rating}`}
           className="kasa-showitem-star kasa-showitem-star-disable"
           icon={faStar}
         />
@@ -87,6 +87,8 @@ function PrevArrow(props) {
   );
 }
 
+
+
 function ShowItem() {
   const logement = GetItem();
   if (!logement) {
@@ -94,47 +96,66 @@ function ShowItem() {
   }
   const [allPanels, setAllPanels] = useState({
     panelDescription: true,
-    panelEquipements: true
- });
+    panelEquipements: true,
+  });
 
-  const changeHandler = selectPanel => {
-    setAllPanels({...allPanels, [selectPanel]: !allPanels[selectPanel]})
- }
-
-
-  const stars = StarsRating(logement.rating, logement.id);
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    appendDots: (dots) => (
-      <div
-        style={{
-          borderRadius: "10px",
-          padding: "10px",
-        }}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: "30px",
-          color: "gray",
-          border: "1px gray solid",
-        }}
-      >
-        {i + 1}
-      </div>
-    ),
+  const changeHandler = (selectPanel) => {
+    setAllPanels({ ...allPanels, [selectPanel]: !allPanels[selectPanel] });
   };
 
+  const stars = StarsRating(logement.rating, logement.id);
+  let settings = {};
+  if(logement.pictures.length === 1){
+     settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      nextArrow: false,
+      prevArrow: false,
+      
+    };
+  }else{
+     settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+      appendDots: (dots) => (
+        <div
+          style={{
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+        >
+          <ul style={{ margin: "0px" }}> {dots} </ul>
+        </div>
+      ),
+      customPaging: (i) => (
+        <div
+          style={{
+            width: "30px",
+            color: "gray",
+            border: "1px gray solid",
+          }}
+        >
+          {i + 1}
+        </div>
+      ),
+    };
+  }
+  
+  function numerSlides(number, index){
+    if(number > 1){
+      return <p>{index + 1}/{logement.pictures.length}</p>
+    }
+  }
   return (
     <div className="kasa-showitem">
       <div className="kasa-showitem-slider">
@@ -145,9 +166,9 @@ function ShowItem() {
               className="kasa-showitem-slider-content"
             >
               <img src={pict} alt={`Présentation du bien - ${index + 1}`} />
-              <p>
-                {index + 1}/{logement.pictures.length}
-              </p>
+              
+                {numerSlides(logement.pictures.length, index)}
+              
             </div>
           ))}
         </Slider>

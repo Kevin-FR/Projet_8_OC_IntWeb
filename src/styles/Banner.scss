@@ -1,7 +1,7 @@
 @import './Settings.scss';
 .kasa-banner{
     @include container;
-    
+
     &-container{
         display: flex;
         flex-direction: row;
@@ -10,7 +10,7 @@
     }
     &-logo img{
         max-height: 54px;
-        @media (max-width: 400px) {
+        @media (max-width: $screen_mobile) {
             max-height: 37px;
         }
     }
@@ -26,7 +26,7 @@
             font-size: 24px;
             cursor: pointer;
             padding-left: 57px;
-            @media (max-width: 400px) {
+            @media (max-width: $screen_mobile) {
                 font-size: 12px;
                 padding-left: 26px;
             }

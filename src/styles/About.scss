@@ -10,7 +10,7 @@
         width: 80%;
         position: relative;
         margin: 10px auto;
-        @media (max-width:400px) {
+        @media (max-width: $screen_mobile) {
             width: 100%;
         }
         &-header{
