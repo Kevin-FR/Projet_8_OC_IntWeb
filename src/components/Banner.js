@@ -1,22 +1,13 @@
-import '../styles/Banner.scss'
-import logo from '../assets/logo.svg';
-import { Link } from "react-router-dom";
+import '../styles/Banner.scss';
 
-
-function Banner() {
-	return (
-		<header className='kasa-banner'>
-            <div className='kasa-banner-container'>
-                <div className='kasa-banner-logo'><Link to="/"><img src={logo} alt="logo" /></Link></div>
-                <div className='kasa-banner-nav'>
-                    <nav>
-                        <Link to="/">Accueil</Link>
-                        <Link to="/apropos">A propos</Link>
-                    </nav>
-                </div>
-            </div>
-		</header>
-	);
+function Banner(props){
+    return(
+        <div className="kasa-banner" >
+                <img alt='banner' src={props.background} />
+				<div className="kasa-banner-text">{props.text}</div>
+			
+        </div>
+    );
 }
 
-export default Banner
+export default Banner;

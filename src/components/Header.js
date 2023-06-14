@@ -1,27 +1,17 @@
 import '../styles/Header.scss';
-import montain from "../assets/images/montain.png"
-import ocean from "../assets/images/bg-ocean.png"
+import logo from '../assets/logo.svg';
+import Nav from './Nav';
+import { Link } from "react-router-dom";
 
 
-
-function Header(background) {
-  let image = montain;
-if(background.background === "ocean"){
-  image = ocean;
-}
+function Header() {
   return (
     <div className="kasa-header">
       <header className="kasa-header-container">
-        <div className="kasa-header-highlight">
-          <img src={image}  alt={background.background} />
-          <div className='kasa-header-highlight-dark'></div>
-          </div>
-        <div className='kasa-header-info'>
-            <p>
-            Chez vous, partout et ailleurs
-            </p>
+        <div className='kasa-header-logo'><Link to="/"><img src={logo} alt="logo" /></Link></div>
+        <div className='kasa-header-nav'>
+          <Nav />
         </div>
-       
       </header>
     </div>
   );

@@ -5,6 +5,8 @@ $nav_header: $primary_color;
 $footer_bg_color : #000000;
 $screen_mobile : 600px;
 
+
+
 @mixin primary-font{
 	font-family: 'Montserrat';
     font-style: normal;
@@ -18,3 +20,5 @@ $screen_mobile : 600px;
     padding: 10px;
     }
 }
+
+

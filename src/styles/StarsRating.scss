@@ -1,0 +1,13 @@
+@import './Settings.scss';
+
+.kasa-star{
+
+    font-size: 24px;
+    margin-left: 10px;
+    &-disable{
+        color: gray;
+    }
+    &-enable{
+        color: $primary_color;
+    }
+}

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.scss';
-import Gallery from './components/pages/Gallery';
-import ShowItem from './components/pages/ShowItem';
-import Error404 from './components/pages/Error404';
-import About from './components/pages/About';
+import Gallery from './pages/Gallery';
+import ShowItem from './pages/ShowItem';
+import Error404 from './pages/Error404';
+import About from './pages/About';
 import Footer from './components/Footer';
-import Banner from './components/Banner';
+import Header from './components/Header';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     
     <Router>
-      <Banner />
+      <Header />
         <Routes>
           <Route path="/" element={<Gallery />} />
           <Route path="/show/:id" element={<ShowItem />} />
