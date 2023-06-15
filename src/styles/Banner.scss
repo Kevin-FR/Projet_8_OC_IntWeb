@@ -14,6 +14,9 @@
         @include big-radius;
         object-fit: cover;
         filter: brightness(80%);
+        @media (max-width: $screen_mobile) {
+            height: 111px;
+          }
     }
 
     &-text {
@@ -26,6 +29,7 @@
         @media (max-width: $screen_mobile) {
             left: 5%;
             font-size: 24px;
+            top: 30%;
           }
     }
 
