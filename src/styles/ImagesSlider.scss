@@ -20,9 +20,12 @@
     }
 
     img {
-        height: 100%;
+        height: 340px;
         width: 100%;
         object-fit: cover;
+        @media (max-width: $screen_mobile) {
+            height: 225px;
+          }
     }
 
     div:nth-child(1) {
