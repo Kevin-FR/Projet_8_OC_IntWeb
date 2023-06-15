@@ -15,7 +15,7 @@ $screen_mobile : 600px;
 @mixin container {
     max-width: 1240px;
     margin: auto;
-    padding: 15px;
+    padding: 10px;
 
     @media (max-width: $screen_mobile) {
         padding: 10px;

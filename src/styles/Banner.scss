@@ -2,8 +2,9 @@
 
 .kasa-banner {
     position: relative;
-    margin-bottom: 43px;
+    margin-bottom: 38px;
     @media (max-width: $screen_mobile) {
+        margin-bottom: 19px;
         margin-bottom: 22px;
       }
 

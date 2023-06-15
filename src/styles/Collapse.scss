@@ -4,6 +4,7 @@
     width: 100%;
     position: relative;
     margin-bottom: 20px;
+    min-height: 30px;
 
     &-header {
         position: absolute;
@@ -30,7 +31,6 @@
     &-content {
         background-color: #F6F6F6;
         border-radius: 0 0 5px 5px;
-        margin-top: 35px;
         z-index: 1;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
