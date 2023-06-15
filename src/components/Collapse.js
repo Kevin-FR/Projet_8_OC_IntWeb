@@ -19,7 +19,6 @@ const PanelContentInner = styled.div`
 `;
 
 function Collapse(props) {
-  console.log(props.id);
   const [allPanels, setAllPanels] = useState(true);
 
   const changeHandler = (selectPanel) => {

@@ -121,6 +121,12 @@
         >div {
             width: 50%;
         }
+        @media (max-width: $screen_mobile) {
+            flex-direction: column;
+            >div {
+                width: 100%;
+            }
+          }
     }
 
     @media (max-width: $screen_mobile) {

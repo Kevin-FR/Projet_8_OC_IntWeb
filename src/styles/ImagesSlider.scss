@@ -2,7 +2,9 @@
 
 .kasa-slider {
     padding-bottom: 50px;
-
+    @media (max-width: $screen_mobile) {
+        padding-bottom: 15px;
+    }
     &-content {
         position: relative;
         height: 100%;

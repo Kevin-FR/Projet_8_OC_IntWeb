@@ -23,7 +23,7 @@ function ShowItem() {
 function ListEquipments(logement){
   return(
     <ul>
-      {logement.equipments.map((equipment)=>(<li>{equipment}</li>))}
+      {logement.equipments.map((equipment, index)=>(<li key={index}>{equipment}</li>))}
     </ul>
 );
 }
