@@ -1,5 +1,6 @@
 @import './Settings.scss';
-.kasa-footer{
+
+.kasa-footer {
     background-color: $footer_bg_color;
     color: white;
     display: flex;
@@ -9,7 +10,7 @@
     padding: 30px 0 20px 0;
     margin-top: 50px;
 
-    &-corporate{
+    &-corporate {
         padding-top: 20px;
     }
 

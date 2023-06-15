@@ -11,7 +11,6 @@ function Gallery() {
 
             <div className='kasa-gallery-cards'>
                 {logements.map(({id, title, cover}) =>(
-                    
                     <div key={id} className='kasa-gallery-card'>
                         <Link to={`/show/${id}`}>
                         <img src={cover} alt={`${title} cover`} />
@@ -19,7 +18,6 @@ function Gallery() {
                         <p>{title}</p>
                         </Link>
                     </div>
-                    
                 ))}
             </div>
         </div>

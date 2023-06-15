@@ -16,16 +16,21 @@ function GetItem() {
 
 function ShowItem() {
   const logement = GetItem();
-  
   if (!logement) {
     window.location.replace("/error404");
   }
 
-  
+function ListEquipments(logement){
+  return(
+    <ul>
+      {logement.equipments.map((equipment)=>(<li>{equipment}</li>))}
+    </ul>
+);
+}
+
   return (
     <div className="kasa-showitem">
       <ImagesSlider logement={logement} />
-
       <div className="kasa-showitem-header">
         <div className="kasa-showitem-header-left">
           <div className="kasa-showitem-title">
@@ -64,7 +69,8 @@ function ShowItem() {
                       <Collapse id="collapse_description" title="Description" content={logement.description} />
                     </div>
                     <div key="collapse_equipement" className="kasa-showitem-collapse__mleft">
-                      <Collapse id="collapse_equipement" title="Équipements" content={logement.equipments} />
+                      <Collapse id="collapse_equipement" title="Équipements" 
+                      content= {ListEquipments(logement)} />
                     </div>
       </div>
     </div>

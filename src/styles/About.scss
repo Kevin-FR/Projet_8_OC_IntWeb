@@ -1,12 +1,12 @@
 @import './Settings.scss';
 
-.kasa-about{
+.kasa-about {
     @include container;
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    &-collapse{
+    &-collapse {
         margin: auto;
         width: 80%;
     }

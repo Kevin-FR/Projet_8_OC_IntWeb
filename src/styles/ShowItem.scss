@@ -1,102 +1,115 @@
 @import './Settings.scss';
 
-.kasa-showitem{
+.kasa-showitem {
     @include container;
     color: $primary_color;
     width: 100%;
-    
 
-    &-header{
+
+    &-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: nowrap;
-        h1{
+
+        h1 {
             font-weight: 500;
             font-size: 36px;
             margin-bottom: 10px;
+
             @media (max-width: $screen_mobile) {
-            font-size: 18px;
+                font-size: 18px;
             }
         }
-        &-left{
+
+        &-left {
             width: 70%;
         }
-        &-right{
+
+        &-right {
             display: flex;
             flex-direction: column;
             width: 30%;
             text-align: right;
         }
     }
-    &-header-bottom{
+
+    &-header-bottom {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 20px 0;
     }
-    &-location{
+
+    &-location {
         font-weight: 500;
         font-size: 18px;
+
         @media (max-width: $screen_mobile) {
             font-size: 14px;
         }
     }
-    &-profil{
+
+    &-profil {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-end;
-        &-name{
+
+        &-name {
             font-weight: 500;
             font-size: 18px;
             max-width: 90px;
             text-align: end;
             margin: auto 0;
+
             @media (max-width: $screen_mobile) {
                 font-size: 12px;
                 max-width: 80px;
             }
         }
-        &-picture img{
+
+        &-picture img {
             max-height: 64px;
             border-radius: 50%;
             margin-left: 10px;
         }
     }
 
-    &-rating{
+    &-rating {
         margin: auto 0;
     }
 
-    &-tags{
+    &-tags {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         margin: 10px 0;
     }
-    &-tag{
+
+    &-tag {
         color: white;
         font-weight: 500;
         font-size: 14px;
         background-color: $primary_color;
-        padding: 5px 15px ;
+        padding: 5px 15px;
         border-radius: 10px;
         margin-right: 10px;
         margin-bottom: 5px;
+
         @media (max-width: $screen_mobile) {
             font-size: 10px;
         }
     }
 
-    &-collapse__mleft{
+    &-collapse__mleft {
         margin-left: 10px;
-    
-}
 
-    
+    }
 
-    &-bottom{
+
+
+    &-bottom {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -104,49 +117,47 @@
         align-items: normal;
         align-content: normal;
         min-height: 30vh;
-        > div{
+
+        >div {
             width: 50%;
         }
     }
-    
 
-        
+    @media (max-width: $screen_mobile) {
 
-    
-
- 
-    
-@media (max-width: $screen_mobile) {
-
-        &-header{
+        &-header {
             flex-direction: column;
-            &-right{
+
+            &-right {
                 justify-content: space-between;
                 flex-wrap: nowrap;
                 flex-direction: row-reverse;
                 width: 100%;
             }
         }
-        &-star{
+
+        &-star {
             font-size: 13px;
             margin-left: 6px;
         }
 
-        &-bottom{
+        &-bottom {
             flex-wrap: wrap;
         }
+
         &-slider {
-            &-content{
-            height: 225px;
-        }}
-        &-collapse__mleft{
-                margin-left: 0px;
-            
+            &-content {
+                height: 225px;
+            }
         }
-        
-    
+
+        &-collapse__mleft {
+            margin-left: 0px;
+
+        }
+
+
     }
-  
+
 
 }
-

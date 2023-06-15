@@ -7,18 +7,26 @@ $screen_mobile : 600px;
 
 
 
-@mixin primary-font{
-	font-family: 'Montserrat';
+@mixin primary-font {
+    font-family: 'Montserrat';
     font-style: normal;
 }
 
-@mixin container{
+@mixin container {
     max-width: 1240px;
     margin: auto;
     padding: 15px;
+
     @media (max-width: $screen_mobile) {
-    padding: 10px;
+        padding: 10px;
     }
 }
 
 
+@mixin big-radius {
+    border-radius: 25px;
+}
+
+@mixin small-radius {
+    border-radius: 10px;
+}

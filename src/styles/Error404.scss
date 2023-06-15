@@ -1,21 +1,24 @@
 @import './Settings.scss';
 
-.kasa-error404{
+.kasa-error404 {
     @include container;
     display: flex;
     flex-direction: column;
     text-align: center;
     color: #FF6060;
-    h1{
+
+    h1 {
         font-weight: 700;
         font-size: 288px;
         margin: 30px;
     }
-    p{
+
+    p {
         font-weight: 500;
         font-size: 36px;
     }
-    a{
+
+    a {
         margin-top: 20px;
         font-weight: 500;
         font-size: 18px;

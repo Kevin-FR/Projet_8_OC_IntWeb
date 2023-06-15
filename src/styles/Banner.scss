@@ -1,18 +1,18 @@
 @import './Settings.scss';
 
+.kasa-banner {
 
-.kasa-banner{
-    
-    img{
+    img {
         width: 100%;
         height: 220px;
-        border-radius: 25px;
+        @include big-radius;
         object-fit: cover;
     }
-    &-text{
+
+    &-text {
         color: white;
     }
 
-    
+
 
 }
