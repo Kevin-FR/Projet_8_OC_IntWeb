@@ -12,6 +12,13 @@
 
     &-corporate {
         padding-top: 20px;
+        font-weight: 500;
+        font-size: 24px;
+        @media (max-width: $screen_mobile) {
+            width: 30%;
+            font-weight: 500;
+            font-size: 12px;
+          }
     }
 
 }
