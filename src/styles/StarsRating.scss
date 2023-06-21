@@ -4,9 +4,9 @@
     font-size: 24px;
     margin-left: 10px;
     &-disable{
-        color: gray;
+        fill: gray;
     }
     &-enable{
-        color: $primary_color;
+        fill: $primary_color;
     }
 }

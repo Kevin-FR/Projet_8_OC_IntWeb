@@ -1,108 +1,48 @@
 import "../styles/ImagesSlider.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Slider from "react-slick";
-import "../styles/slick.scss";
-import "../styles/slick-theme.scss";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-function NextArrow(props) {
-  const { className, style, onClick } = props;
+export default function Carrousel(props) {
+  const slides = props.logement.pictures;
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
   return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
-      <FontAwesomeIcon
-        className="kasa-showitem-star-disable"
-        icon={faChevronRight}
-      />
-    </div>
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={className} style={{ ...style }} onClick={onClick}>
-      <FontAwesomeIcon
-        className="kasa-showitem-star-disable"
-        icon={faChevronLeft}
-      />
-    </div>
-  );
-}
-
-function ImagesSlider(props) {
-  const logement = props.logement;
-  let settings = {};
-  if (logement.pictures.length === 1) {
-    settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      autoplay: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      nextArrow: false,
-      prevArrow: false,
-    };
-  } else {
-    settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      autoplay: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-      appendDots: (dots) => (
-        <div
-          style={{
-            borderRadius: "10px",
-            padding: "10px",
-          }}
-        >
-          <ul style={{ margin: "0px" }}> {dots} </ul>
+    <section className="kasa-slider">
+      {length > 1 && (
+        <div className="kasa-slider-arrow kasa-slider-arrow-left" onClick={prevSlide}>
+          <svg className="kasa-showitem-star-disable" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+      
         </div>
-      ),
-      customPaging: (i) => (
-        <div
-          style={{
-            width: "30px",
-            color: "gray",
-            border: "1px gray solid",
-          }}
-        >
-          {i + 1}
+      )}
+      {length > 1 && (
+        <div className="kasa-slider-arrow kasa-slider-arrow-right" onClick={nextSlide}>
+          <svg className="kasa-showitem-star-disable" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
         </div>
-      ),
-    };
-  }
-
-  function numberSlides(number, index) {
-    if (number > 1) {
-      return (
-        <p>
-          {index + 1}/{logement.pictures.length}
-        </p>
-      );
-    }
-  }
-
-  return (
-    <div className="kasa-slider">
-      <Slider {...settings}>
-        {logement.pictures.map((pict, index) => (
-          <div key={`slide${index + 1}`} className="kasa-slider-content">
-            <img src={pict} alt={`Présentation du bien - ${index + 1}`} />
-
-            {numberSlides(logement.pictures.length, index)}
-          </div>
-        ))}
-      </Slider>
-    </div>
+      )}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={
+            current === index
+              ? "kasa-slider-content kasa-slider-active"
+              : "kasa-slider-content"
+          }
+        >
+          {index === current && <img src={slide} alt="Logement slide" />}
+          {index === current && (
+            <span className={length > 1 ? "kasa-slider-number" : "kasa-hide"}>
+              {current + 1}/{length}
+            </span>
+          )}
+        </div>
+      ))}
+    </section>
   );
 }
-
-export default ImagesSlider;

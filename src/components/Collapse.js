@@ -1,41 +1,46 @@
-import styled from "styled-components";
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Collapse.scss";
 
-const ToggleButtonWrapper = styled.div`
-  transform: ${(props) =>
-    props.collapsed ? "rotate(0deg)" : "rotate(180deg)"};
-`;
-
-const PanelContent = styled.div`
-  overflow: hidden;
-  max-height: ${(props) => (props.collapsed ? 0 : "400px")};
-`;
-
-const PanelContentInner = styled.div`
-  padding: 50px 20px 20px 20px;
-`;
+function transformPanel() {
+  //max-height: ${(props) => (props.collapsed ? 0 : "400px")};
+  //props.collapsed ? "rotate(0deg)" : "rotate(180deg)"};
+}
 
 function Collapse(props) {
-  const [allPanels, setAllPanels] = useState(true);
-
-  const changeHandler = (selectPanel) => {
-    setAllPanels((selectPanel) => !allPanels);
+  const [panel, setPanel] = useState(0);
+  const changeHandler = () => {
+    setPanel(() => !panel);
   };
-
   return (
     <div key={props.id} className="kasa-collapse">
       <div className="kasa-collapse-header" onClick={changeHandler}>
         <span>{props.title}</span>
-        <ToggleButtonWrapper collapsed={+allPanels}>
-          <FontAwesomeIcon className="kasa-star-disable" icon={faChevronDown} />
-        </ToggleButtonWrapper>
+        <div className={
+            panel
+              ? "kasa-collapse-svg"
+              : "kasa-collapse-svg kasa-collapse-svg-180"
+          }
+           collapsed={+panel}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1em"
+            viewBox="0 0 512 512"
+          >
+            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg>
+        </div>
       </div>
-      <PanelContent className="kasa-collapse-content" collapsed={+allPanels}>
-        <PanelContentInner>{props.content}</PanelContentInner>
-      </PanelContent>
+      <div className="kasa-collapse-content" collapsed={+panel}>
+        <div
+          className={
+            panel
+              ? "kasa-collapse-content-inner"
+              : "kasa-collapse-content-inner kasa-collapse-content-inner-hide"
+          }
+        >
+          {props.content}
+        </div>
+      </div>
     </div>
   );
 }

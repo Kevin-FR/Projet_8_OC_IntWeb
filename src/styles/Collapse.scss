@@ -23,20 +23,39 @@
         font-size: 18px;
         z-index: 2;
 
-        svg {
-            color: white;
-        }
     }
 
     &-content {
         background-color: #F6F6F6;
         border-radius: 0 0 5px 5px;
         z-index: 1;
+        overflow: hidden;
+
+        &-inner{
+            padding: 50px 20px 20px 20px;
+            max-height: 400px;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -ms-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+        transition:  0.5s ease;
+            &-hide{
+                padding: 0px;
+                max-height: 0px;
+            }
+        }
+    }
+
+    &-svg{
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition:  0.5s ease;
+        fill: white;
+        &-180{
+            transform: rotate(180deg);
+        }
     }
 
     &__mleft {
