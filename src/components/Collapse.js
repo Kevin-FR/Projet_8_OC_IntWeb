@@ -1,11 +1,6 @@
 import { useState } from "react";
 import "../styles/Collapse.scss";
 
-function transformPanel() {
-  //max-height: ${(props) => (props.collapsed ? 0 : "400px")};
-  //props.collapsed ? "rotate(0deg)" : "rotate(180deg)"};
-}
-
 function Collapse(props) {
   const [panel, setPanel] = useState(0);
   const changeHandler = () => {
@@ -15,12 +10,14 @@ function Collapse(props) {
     <div key={props.id} className="kasa-collapse">
       <div className="kasa-collapse-header" onClick={changeHandler}>
         <span>{props.title}</span>
-        <div className={
+        <div
+          className={
             panel
               ? "kasa-collapse-svg"
               : "kasa-collapse-svg kasa-collapse-svg-180"
           }
-           collapsed={+panel}>
+          collapsed={+panel}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="1em"
