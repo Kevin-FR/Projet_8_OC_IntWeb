@@ -56,6 +56,12 @@
         &-180{
             transform: rotate(180deg);
         }
+        svg{
+            height: 14px;
+            @media (max-width: $screen_mobile) {
+                height: 9px;
+            }
+        }
     }
 
     &__mleft {
